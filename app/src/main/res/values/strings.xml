@@ -7,6 +7,24 @@
     <string name="next">Next</string>
     <string name="previous">Previous</string>
 
+    <string name="number">Number</string>
+    <string name="add">ADD</string>
+    <string name="blank">""</string>
+    <string name="x2">x\u00B2+</string>
+    <string name="x">x+</string>
+    <string name="eq0">=0</string>
+    <string name="compute">compute</string>
+
+    <string name="result1">The constant equation.</string>
+    <string name="result2">The linerar equation has one root. The root is: </string>
+    <string name="result3">The quadratic equation has no roots. The square determinant equals </string>
+    <string name="result4a">The quadratic equation has one root. The root equals </string>
+    <string name="result4b"> The square determinant equals </string>
+    <string name="result5a">The quadratic equation has two roots. The first root equals </string>
+    <string name="result5b">, the second root equals </string>
+    <string name="result5c"> The square determinant equals </string>
+    <string name="conflict">Conflict</string>
+
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 </resources>
