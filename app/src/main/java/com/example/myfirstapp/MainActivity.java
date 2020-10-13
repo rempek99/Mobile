@@ -73,13 +73,13 @@ public class MainActivity extends AppCompatActivity {
                         result = res.getString(R.string.result1) + " 0 = 0";
                         resultTextView.setText(result);
                         if(fct3!=0) {
-                            result = res.getString(R.string.result1) + " " + res.getString(R.string.conflict) + " " + String.valueOf(fct3) + " \u2260 0";
+                            result = res.getString(R.string.result1) + " " + res.getString(R.string.conflict) + " " + fct3 + " \u2260 0";
                         }
                     }
                     else {
                         //funkcja linionwa
                         float root = -fct3 / fct2;
-                        result = res.getString(R.string.result2) + String.valueOf(root);
+                        result = res.getString(R.string.result2) + root;
                     }
                 }
                 else {
@@ -88,19 +88,19 @@ public class MainActivity extends AppCompatActivity {
                     delta = fct2*fct2 - (4 * fct1 * fct3);
                     if(delta<0)
                     {
-                        result = res.getString(R.string.result3) + String.valueOf(delta);
+                        result = res.getString(R.string.result3) + delta;
                     }
                     if(delta == 0)
                     {
                         root1 = -fct2 / (2 * fct1);
-                        result = res.getString(R.string.result4a) + String.valueOf(root1) + res.getString(R.string.result4b) + String.valueOf(delta);
+                        result = res.getString(R.string.result4a) + root1 + "\n" + res.getString(R.string.result4b) + delta;
                     }
                     if(delta>0)
                     {
-                        root1 = (-fct2 - Math.sqrt(delta) ) / (2 * fct2);
-                        root2 = (-fct2 + Math.sqrt(delta) ) / (2 * fct2);
-                        result = res.getString(R.string.result5a) + String.valueOf(root1) + res.getString(R.string.result5b) + String.valueOf(root2)
-                        + res.getString(R.string.result5c) + String.valueOf(delta);
+                        root1 = (-fct2 - Math.sqrt(delta) ) / (2 * fct1);
+                        root2 = (-fct2 + Math.sqrt(delta) ) / (2 * fct1);
+                        result = res.getString(R.string.result5a) + root1 + res.getString(R.string.result5b) + root2
+                        + "\n" +res.getString(R.string.result5c) + delta;
                     }
                 }
                 resultTextView.setText(result);
