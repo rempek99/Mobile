@@ -45,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
                     return;
 
                 TextView resultTextView = (TextView) findViewById(R.id.resultTextView);
+                //parsowanie w try catch
                 float result = Float.parseFloat(firstNumber.getText().toString()) + Float.parseFloat(secondNumber.getText().toString());
                 resultTextView.setText(String.valueOf(result));
             }
@@ -90,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
                     {
                         result = res.getString(R.string.result3) + delta;
                     }
-                    if(delta == 0)
+                    else if(delta == 0)
                     {
                         root1 = -fct2 / (2 * fct1);
                         result = res.getString(R.string.result4a) + root1 + "\n" + res.getString(R.string.result4b) + delta;
