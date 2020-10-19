@@ -3,9 +3,7 @@ package com.example.myfirstapp;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.example.myfirstapp.zadanie1.Zadanie1;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
+import com.example.myfirstapp.task1.MainActivity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -22,14 +20,21 @@ public class Start_Activity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        Button btn_zadanie1 = (Button) findViewById(R.id.btn_zadanie1);
-        btn_zadanie1.setOnClickListener(new View.OnClickListener() {
+        Button btn_task1 = (Button) findViewById(R.id.btn_task1);
+        btn_task1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent go_to_task1 = new Intent(getApplicationContext(), Zadanie1.class);
+                Intent go_to_task1 = new Intent(getApplicationContext(), com.example.myfirstapp.task1.MainActivity.class);
                 startActivity(go_to_task1);
             }
         });
-
+        Button btn_task2 = (Button) findViewById(R.id.btn_task2);
+        btn_task2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent go_to_task2 = new Intent(getApplicationContext(), com.example.myfirstapp.task2.MainActivity.class);
+                startActivity(go_to_task2);
+            }
+        });
     }
 }

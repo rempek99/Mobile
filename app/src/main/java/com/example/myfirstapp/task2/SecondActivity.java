@@ -1,4 +1,4 @@
-package com.example.myfirstapp.zadanie2;
+package com.example.myfirstapp.task2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,11 +6,11 @@ import android.os.Bundle;
 
 import com.example.myfirstapp.R;
 
-public class second_activity extends AppCompatActivity {
+public class SecondActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_second_activity);
+        setContentView(R.layout.activity_task2_second_activity);
     }
 }

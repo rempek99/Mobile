@@ -19,10 +19,16 @@
             android:orientation="vertical" >
 
             <Button
-                android:id="@+id/btn_zadanie1"
+                android:id="@+id/btn_task1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/title_activity_zadanie1" />
+                android:text="@string/title_activity_task1" />
+
+            <Button
+                android:id="@+id/btn_task2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/title_activity_task2" />
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

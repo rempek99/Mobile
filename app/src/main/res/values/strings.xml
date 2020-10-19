@@ -12,6 +12,7 @@
     <string name="x">x+</string>
     <string name="eq0">=0</string>
     <string name="compute">compute</string>
+    <string name="compute_delta">compute delta</string>
 
     <string name="result1">The constant equation.</string>
     <string name="result2">The linerar equation has one root. The root is:\u0020</string>
@@ -23,8 +24,11 @@
     <string name="result5c"> The square determinant equals\u0020</string>
     <string name="conflict">Conflict</string>
     <string name="google">Google</string>
+    <string name="map">Map</string>
+    <string name="phone">Phone</string>
 
-    <string name="title_activity_zadanie1">Zadanie 1</string>
+    <string name="title_activity_task1">Task 1</string>
+    <string name="title_activity_task2">Task 2</string>
     <string name="title_activity_start_activity">Start_Activity</string>
     <string name="title_activity_second_activity">Second Activity</string>
 </resources>

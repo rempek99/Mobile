@@ -1,4 +1,4 @@
-package com.example.myfirstapp.zadanie1;
+package com.example.myfirstapp.task1;
 
 import android.content.res.Resources;
 import android.os.Bundle;
@@ -18,23 +18,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class Zadanie1 extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_zadanie1);
+        setContentView(R.layout.activity_task1_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
 
         Button addBtn = (Button) findViewById(R.id.AddBtn);
         addBtn.setOnClickListener(new View.OnClickListener() {
