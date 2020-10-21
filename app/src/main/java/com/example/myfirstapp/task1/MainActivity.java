@@ -39,7 +39,17 @@ public class MainActivity extends AppCompatActivity {
 
                 TextView resultTextView = (TextView) findViewById(R.id.resultTextView);
                 //parsowanie w try catch
-                float result = Float.parseFloat(firstNumber.getText().toString()) + Float.parseFloat(secondNumber.getText().toString());
+                String result = "";
+                try{
+                    result = String.valueOf(Float.parseFloat(firstNumber.getText().toString()) + Float.parseFloat(secondNumber.getText().toString()));
+
+                }
+                catch (NumberFormatException e){
+                    result = "Wrong number format.";
+                }
+                catch (Exception e){
+                    result = "Error";
+                }
                 resultTextView.setText(String.valueOf(result));
             }
         });
@@ -55,10 +65,25 @@ public class MainActivity extends AppCompatActivity {
                     return;
                 Resources res = getResources();
                 TextView resultTextView = (TextView) findViewById(R.id.equalResultTextView);
-                float fct1 = Float.parseFloat(firstFactor.getText().toString());
-                float fct2 = Float.parseFloat(secondFactor.getText().toString());
-                float fct3 = Float.parseFloat(thirdFactor.getText().toString());
                 String result = "";
+                float fct1;
+                float fct2;
+                float fct3;
+                try {
+                    fct1 = Float.parseFloat(firstFactor.getText().toString());
+                    fct2 = Float.parseFloat(secondFactor.getText().toString());
+                    fct3 = Float.parseFloat(thirdFactor.getText().toString());
+                }
+                catch (NumberFormatException e){
+                    result = "Wrong number format.";
+                    resultTextView.setText(result);
+                    return;
+                }
+                catch (Exception e){
+                    result = "Error";
+                    resultTextView.setText(result);
+                    return;
+                }
                 if(fct1==0)
                 {
                     if(fct2==0)
