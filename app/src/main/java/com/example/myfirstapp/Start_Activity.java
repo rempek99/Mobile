@@ -36,5 +36,13 @@ public class Start_Activity extends AppCompatActivity {
                 startActivity(go_to_task2);
             }
         });
+        Button btn_task3 = (Button) findViewById(R.id.btn_task3);
+        btn_task3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent go_to_task3 = new Intent(getApplicationContext(), com.example.myfirstapp.task3.DrawActivity.class);
+                startActivity(go_to_task3);
+            }
+        });
     }
 }

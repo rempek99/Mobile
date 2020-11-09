@@ -26,9 +26,14 @@
     <string name="google">Google</string>
     <string name="map">Map</string>
     <string name="phone">Phone</string>
+    <string name="normal">Normal</string>
+    <string name="blur">Blur</string>
+    <string name="emboss">Emboss</string>
+    <string name="clear">Clear</string>
 
     <string name="title_activity_task1">Task 1</string>
     <string name="title_activity_task2">Task 2</string>
+    <string name="title_activity_task3">Task 3</string>
     <string name="title_activity_start_activity">Start_Activity</string>
     <string name="title_activity_second_activity">Second Activity</string>
 </resources>
