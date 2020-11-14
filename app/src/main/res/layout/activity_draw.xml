@@ -19,6 +19,76 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <ScrollView
+        android:id="@+id/colorThicknessPicker"
+        android:layout_width="300dp"
+        android:layout_height="400dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/pickerLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#46989191"
+            android:orientation="vertical">
+
+            <SeekBar
+                android:id="@+id/seekBarR"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:indeterminate="false"
+                android:max="255"
+                android:progress="1" />
+
+            <TextView
+                android:id="@+id/seekBarRTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/red"
+                android:textAlignment="center" />
+
+            <SeekBar
+                android:id="@+id/seekBarG"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:indeterminate="false"
+                android:max="255"
+                android:progress="1" />
+
+            <TextView
+                android:id="@+id/seekBarGTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/green"
+                android:textAlignment="center" />
+
+            <SeekBar
+                android:id="@+id/seekBarB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:indeterminate="false"
+                android:max="255"
+                android:progress="1" />
+
+            <TextView
+                android:id="@+id/seekBarBTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/blue"
+                android:textAlignment="center" />
+            <View
+                android:id="@+id/colorRewiev"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="@color/cardview_dark_background"
+                android:layout_gravity="center"
+                />
+        </LinearLayout>
+    </ScrollView>
+
+    <ScrollView
         android:id="@+id/drawModeMenu"
         style="@android:style/Widget.DeviceDefault.Light.ScrollView"
         android:layout_width="300dp"

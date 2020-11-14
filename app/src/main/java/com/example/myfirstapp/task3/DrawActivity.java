@@ -1,22 +1,18 @@
 package com.example.myfirstapp.task3;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.os.Bundle;
-import android.util.DisplayMetrics;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ScrollView;
+import android.widget.SeekBar;
+import android.widget.TextView;
 
 import com.example.myfirstapp.R;
-
-import static android.view.Window.FEATURE_NO_TITLE;
-import static android.view.WindowManager.LayoutParams.FLAG_FULLSCREEN;
 
 public class DrawActivity extends AppCompatActivity {
     private DrawView drawView;
@@ -53,6 +49,25 @@ public class DrawActivity extends AppCompatActivity {
             public void onClick(View view) {
                 ScrollView modeMenu = (ScrollView) findViewById(R.id.drawModeMenu);
                 modeMenu.setVisibility(View.GONE);
+            }
+        });
+        final SeekBar barRed = (SeekBar) findViewById(R.id.seekBarB);
+        final TextView barRedTile = (TextView) findViewById(R.id.seekBarBTitle);
+        barRed.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                String tmp = getResources().getString(R.string.red);
+                barRedTile.setText(tmp + barRed.getProgress());
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
             }
         });
     }
