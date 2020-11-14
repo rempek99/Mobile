@@ -30,6 +30,7 @@
     <string name="blur">Blur</string>
     <string name="emboss">Emboss</string>
     <string name="clear">Clear</string>
+    <string name="ChangeMode">Change Mode</string>
 
     <string name="title_activity_task1">Task 1</string>
     <string name="title_activity_task2">Task 2</string>

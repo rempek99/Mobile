@@ -59,13 +59,13 @@ public class DrawView extends View implements View.OnTouchListener{
         setFocusable(true);
         setFocusableInTouchMode(true);
         this.setOnTouchListener(this);
-        System.out.println(isFocusable());
-        System.out.println(isFocusableInTouchMode());
+//        System.out.println(isFocusable());
+//        System.out.println(isFocusableInTouchMode());
         paint.setColor(Color.RED);
         brushSize = 40;
         option = '1';
         brushColor = Color.RED;
-        this.setBackgroundColor(Color.BLUE);
+        this.setBackgroundColor(Color.WHITE);
         this.invalidate();
     }
 

@@ -5,9 +5,13 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.os.Bundle;
 import android.util.DisplayMetrics;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.ScrollView;
 
 import com.example.myfirstapp.R;
 
@@ -15,12 +19,13 @@ import static android.view.Window.FEATURE_NO_TITLE;
 import static android.view.WindowManager.LayoutParams.FLAG_FULLSCREEN;
 
 public class DrawActivity extends AppCompatActivity {
+    private DrawView drawView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_draw);
-        final DrawView drawView = (DrawView) findViewById(R.id.draw_view);
+        drawView = (DrawView) findViewById(R.id.draw_view);
         Button normalModeButton = (Button) findViewById(R.id.normalModeButton);
         normalModeButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,12 +47,40 @@ public class DrawActivity extends AppCompatActivity {
                 drawView.setOption('3');
             }
         });
-        Button clearButton = (Button) findViewById(R.id.clearButton);
-        clearButton.setOnClickListener(new View.OnClickListener() {
+        ImageButton modeMenuClose = (ImageButton) findViewById(R.id.modeMenuCloseButton);
+        modeMenuClose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                drawView.clearScreen();
+                ScrollView modeMenu = (ScrollView) findViewById(R.id.drawModeMenu);
+                modeMenu.setVisibility(View.GONE);
             }
         });
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.actionChangeMode) {
+            ScrollView modeMenu = (ScrollView) findViewById(R.id.drawModeMenu);
+            modeMenu.setVisibility(View.VISIBLE);
+            return true;
+        }
+        if (id == R.id.clearBoard){
+
+                    drawView.clearScreen();
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
     }
 }
