@@ -20,6 +20,6 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <include layout="@layout/content_start_activity" />
+    <include layout="@layout/start_content_activity" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

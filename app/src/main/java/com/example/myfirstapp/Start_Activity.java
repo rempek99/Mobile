@@ -3,8 +3,6 @@ package com.example.myfirstapp;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.example.myfirstapp.task1.MainActivity;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
@@ -16,7 +14,7 @@ public class Start_Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_start_activity);
+        setContentView(R.layout.start_activity);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -42,6 +40,14 @@ public class Start_Activity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent go_to_task3 = new Intent(getApplicationContext(), com.example.myfirstapp.task3.DrawActivity.class);
                 startActivity(go_to_task3);
+            }
+        });
+        Button btn_task4 = (Button) findViewById(R.id.btn_task4);
+        btn_task4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent go_to_task4 = new Intent(getApplicationContext(), com.example.myfirstapp.task4.Dice.class);
+                startActivity(go_to_task4);
             }
         });
     }

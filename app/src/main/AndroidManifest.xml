@@ -27,7 +27,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".task3.DrawActivity"></activity>
+        <activity android:name=".task4.Dice"></activity>
+        <activity android:name=".task3.DrawActivity" />
         <activity android:name=".task2.SecondActivity" />
         <activity android:name=".task2.MainActivity" />
         <activity

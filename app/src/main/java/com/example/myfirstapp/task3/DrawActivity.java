@@ -3,7 +3,6 @@ package com.example.myfirstapp.task3;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.Color;
-import android.graphics.ColorSpace;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.Menu;
@@ -11,7 +10,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -28,7 +26,7 @@ public class DrawActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         choosenColor = Color.RED;
         choosenThickness = 20;
-        setContentView(R.layout.activity_draw);
+        setContentView(R.layout.task3_activity_draw);
         drawView = (DrawView) findViewById(R.id.draw_view);
         buttonsSetup();
         colorPickerSetup();

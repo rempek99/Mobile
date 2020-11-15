@@ -11,6 +11,6 @@ public class SecondActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_task2_second_activity);
+        setContentView(R.layout.task2_activity_second);
     }
 }

@@ -37,10 +37,14 @@
     <string name="confirm">Confirm</string>
     <string name="thickness">Thickness: </string>
     <string name="brushSettings">Brush Settings</string>
+    <string name="oneCube">One Cube</string>
+    <string name="twoCubes">Two Cubes</string>
+    <string name="threeCubes">Three Cubes</string>
 
     <string name="title_activity_task1">Task 1</string>
     <string name="title_activity_task2">Task 2</string>
     <string name="title_activity_task3">Task 3</string>
+    <string name="title_activity_task4">Task 4</string>
     <string name="title_activity_start_activity">Start_Activity</string>
     <string name="title_activity_second_activity">Second Activity</string>
 </resources>
