@@ -33,7 +33,10 @@
     <string name="ChangeMode">Change Mode</string>
     <string name="red">Red: </string>
     <string name="green">Green: </string>
-    <string name="blue">Blue</string>
+    <string name="blue">Blue: </string>
+    <string name="confirm">Confirm</string>
+    <string name="thickness">Thickness: </string>
+    <string name="brushSettings">Brush Settings</string>
 
     <string name="title_activity_task1">Task 1</string>
     <string name="title_activity_task2">Task 2</string>

@@ -8,8 +8,14 @@
         android:title="@string/ChangeMode"
         app:showAsAction="never" />
     <item
+        android:id="@+id/brushSettings"
+        android:orderInCategory="100"
+        android:title="@string/brushSettings"
+        app:showAsAction="never" />
+    <item
         android:id="@+id/clearBoard"
         android:orderInCategory="100"
         android:title="@string/clear"
         app:showAsAction="never" />
+
 </menu>

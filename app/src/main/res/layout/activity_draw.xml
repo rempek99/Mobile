@@ -20,8 +20,9 @@
 
     <ScrollView
         android:id="@+id/colorThicknessPicker"
-        android:layout_width="300dp"
-        android:layout_height="400dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -31,8 +32,10 @@
             android:id="@+id/pickerLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#46989191"
-            android:orientation="vertical">
+            android:layout_margin="40dp"
+            android:background="#989191"
+            android:orientation="vertical"
+            android:padding="10dp">
 
             <SeekBar
                 android:id="@+id/seekBarR"
@@ -40,7 +43,7 @@
                 android:layout_height="wrap_content"
                 android:indeterminate="false"
                 android:max="255"
-                android:progress="1" />
+                android:progress="0" />
 
             <TextView
                 android:id="@+id/seekBarRTitle"
@@ -55,7 +58,7 @@
                 android:layout_height="wrap_content"
                 android:indeterminate="false"
                 android:max="255"
-                android:progress="1" />
+                android:progress="0" />
 
             <TextView
                 android:id="@+id/seekBarGTitle"
@@ -70,7 +73,7 @@
                 android:layout_height="wrap_content"
                 android:indeterminate="false"
                 android:max="255"
-                android:progress="1" />
+                android:progress="0" />
 
             <TextView
                 android:id="@+id/seekBarBTitle"
@@ -78,13 +81,36 @@
                 android:layout_height="wrap_content"
                 android:text="@string/blue"
                 android:textAlignment="center" />
+
             <View
                 android:id="@+id/colorRewiev"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:background="@color/cardview_dark_background"
                 android:layout_gravity="center"
-                />
+                android:layout_margin="10dp"
+                android:background="@android:color/black" />
+
+            <SeekBar
+                android:id="@+id/seekBarThickness"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:indeterminate="false"
+                android:max="100"
+                android:min="10"
+                android:progress="20" />
+
+            <TextView
+                android:id="@+id/seekBarThicknessTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/thickness"
+                android:textAlignment="center" />
+
+            <Button
+                android:id="@+id/colorPickerConfirmButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/confirm" />
         </LinearLayout>
     </ScrollView>
 
@@ -94,7 +120,7 @@
         android:layout_width="300dp"
         android:layout_height="240dp"
         android:layout_marginTop="32dp"
-        android:background="#664E4949"
+        android:background="#8E8585"
         android:scrollbarSize="0dp"
         android:scrollbarStyle="insideOverlay"
         android:visibility="gone"

@@ -30,14 +30,26 @@ public class DrawView extends View implements View.OnTouchListener{
     class PointExtended extends Point
     {
         char option;
-        PointExtended(char option)
+        int pointBrushSize;
+        int pointColor;
+        PointExtended(char option, int brushSize, int pointColor)
         {
             super();
+            this.pointBrushSize = brushSize;
             this.option = option;
+            this.pointColor = pointColor;
+        }
+
+        public int getPointColor() {
+            return pointColor;
         }
 
         public char getOption() {
             return option;
+        }
+
+        public int getPointBrushSize() {
+            return pointBrushSize;
         }
 
         public void setOption(char option) {
@@ -53,8 +65,15 @@ public class DrawView extends View implements View.OnTouchListener{
     private Bitmap image;
     private Shader shader;
 
+    public void setBrushSize(int brushSize) {
+        this.brushSize = brushSize;
+    }
 
-    public DrawView(Context context,AttributeSet set) {
+    public void setBrushColor(int brushColor) {
+        this.brushColor = brushColor;
+    }
+
+    public DrawView(Context context, AttributeSet set) {
         super(context,set);
         setFocusable(true);
         setFocusableInTouchMode(true);
@@ -71,13 +90,13 @@ public class DrawView extends View implements View.OnTouchListener{
 
     @Override
     public boolean onTouch(View view, MotionEvent motionEvent) {
-        PointExtended point = new PointExtended(option);
+        PointExtended point = new PointExtended(option, brushSize,brushColor);
         point.x = (int) motionEvent.getX();
         point.y = (int) motionEvent.getY();
         points.add(point);
         if(point.getOption()=='3')
         {
-            PointExtended point2 = new PointExtended('4');
+            PointExtended point2 = new PointExtended('4',brushSize,brushColor);
             point2.x = (int) motionEvent.getX();
             point2.y = (int) motionEvent.getY();
             points.add(point2);
@@ -91,7 +110,7 @@ public class DrawView extends View implements View.OnTouchListener{
         for(PointExtended point:points)
         {
             printSetup(point.getOption(), point);
-            canvas.drawCircle(point.x,point.y,brushSize,paint);
+            canvas.drawCircle(point.x,point.y,point.getPointBrushSize(),paint);
         }
     }
 
@@ -104,13 +123,13 @@ public class DrawView extends View implements View.OnTouchListener{
         this.invalidate();
     }
 
-    public void printSetup(char option, Point point)
+    public void printSetup(char option, PointExtended point)
     {
         switch(option)
         {
             case '1':
-                image = Bitmap.createBitmap(brushSize, brushSize, Bitmap.Config.ARGB_8888);
-                image.eraseColor(brushColor);
+                image = Bitmap.createBitmap(point.getPointBrushSize(), point.getPointBrushSize(), Bitmap.Config.ARGB_8888);
+                image.eraseColor(point.getPointColor());
                 shader = new BitmapShader(image, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP);
                 paint.setStrokeWidth(0);
                 paint.setStyle(Paint.Style.FILL_AND_STROKE);
@@ -120,13 +139,13 @@ public class DrawView extends View implements View.OnTouchListener{
                 paint.setStrokeWidth(5);
                 paint.setStyle(Paint.Style.FILL_AND_STROKE);
                 @SuppressLint("DrawAllocation")
-                RadialGradient blur = new RadialGradient(point.x, point.y,brushSize, brushColor, Color.TRANSPARENT, Shader.TileMode.CLAMP);
+                RadialGradient blur = new RadialGradient(point.x, point.y,point.getPointBrushSize(), point.getPointColor(), Color.TRANSPARENT, Shader.TileMode.CLAMP);
                 paint.setShader(blur);
                 break;
             case '3':
                 paint.setStrokeWidth(0);
-                image = Bitmap.createBitmap(brushSize, brushSize, Bitmap.Config.ARGB_8888);
-                image.eraseColor(brushColor);
+                image = Bitmap.createBitmap(point.getPointBrushSize(), point.getPointBrushSize(), Bitmap.Config.ARGB_8888);
+                image.eraseColor(point.getPointColor());
                 paint.setStyle(Paint.Style.FILL);
                 shader = new BitmapShader(image, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP);
                 paint.setShader(shader);
@@ -134,7 +153,7 @@ public class DrawView extends View implements View.OnTouchListener{
             case '4':
                 paint.setStrokeWidth(5);
                 paint.setStyle(Paint.Style.STROKE);
-                shader =new LinearGradient(point.x-brushSize/2, point.y-brushSize/2, point.x, point.y, Color.BLACK, Color.TRANSPARENT, Shader.TileMode.CLAMP );
+                shader =new LinearGradient(point.x-point.getPointBrushSize()/2, point.y-point.getPointBrushSize()/2, point.x, point.y, Color.BLACK, Color.TRANSPARENT, Shader.TileMode.CLAMP );
                 paint.setShader(shader);
                 break;
         }
