@@ -10,26 +10,39 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.myfirstapp.R;
 
+import java.util.Dictionary;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Random;
 
 public class Dice extends AppCompatActivity implements SensorEventListener {
     private SensorManager mSensorManager;
     private Sensor mAccelerometer;
     private static int SHAKE_THRESHOLD = 3;
-    private TextView mNumber,mNumber2,mNumber3;
+    private ImageView mNumber,mNumber2,mNumber3;
+    private static Map<Integer, Integer> dices;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.task4_activity_dice);
-        mNumber = findViewById(R.id.dice_number);
-        mNumber2 = findViewById(R.id.dice_number2);
-        mNumber3 = findViewById(R.id.dice_number3);
+        mNumber = findViewById(R.id.dice1);
+        mNumber2 = findViewById(R.id.dice2);
+        mNumber3 = findViewById(R.id.dice3);
+        dices = new HashMap<Integer, Integer>();
+        dices.put(1,R.mipmap.dice1_foreground);
+        dices.put(2,R.mipmap.dice2_foreground);
+        dices.put(3,R.mipmap.dice3_foreground);
+        dices.put(4,R.mipmap.dice4_foreground);
+        dices.put(5,R.mipmap.dice5_foreground);
+        dices.put(6,R.mipmap.dice6_foreground);
+
         mSensorManager = (SensorManager)getSystemService(SENSOR_SERVICE);
         mAccelerometer = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
         diceMenuSetup();
@@ -55,11 +68,14 @@ public class Dice extends AppCompatActivity implements SensorEventListener {
     private void generateRandomNumber(){
         Random randomGenerator = new Random();
         int randomNum = randomGenerator.nextInt(6)+1;
-        mNumber.setText(Integer.toString(randomNum));
+        mNumber.setForeground(getDrawable(dices.get(randomNum)));
+        //mNumber.setText(Integer.toString(randomNum));
         randomNum = randomGenerator.nextInt(6)+1;
-        mNumber2.setText(Integer.toString(randomNum));
+        mNumber2.setForeground(getDrawable(dices.get(randomNum)));
+        //mNumber2.setText(Integer.toString(randomNum));
         randomNum = randomGenerator.nextInt(6)+1;
-        mNumber3.setText(Integer.toString(randomNum));
+        mNumber3.setForeground(getDrawable(dices.get(randomNum)));
+        //mNumber3.setText(Integer.toString(randomNum));
     }
 
     @Override
@@ -98,16 +114,16 @@ public class Dice extends AppCompatActivity implements SensorEventListener {
         public void onClick(View v) {
             switch (v.getId()){
                 case R.id.diceOption1:
-                    findViewById(R.id.dice_number2).setVisibility(View.GONE);
-                    findViewById(R.id.dice_number3).setVisibility(View.GONE);
+                    findViewById(R.id.dice2).setVisibility(View.GONE);
+                    findViewById(R.id.dice3).setVisibility(View.GONE);
                     break;
                 case R.id.diceOption2:
-                    findViewById(R.id.dice_number2).setVisibility(View.VISIBLE);
-                    findViewById(R.id.dice_number3).setVisibility(View.GONE);
+                    findViewById(R.id.dice2).setVisibility(View.VISIBLE);
+                    findViewById(R.id.dice3).setVisibility(View.GONE);
                     break;
                 case R.id.diceOption3:
-                    findViewById(R.id.dice_number2).setVisibility(View.VISIBLE);
-                    findViewById(R.id.dice_number3).setVisibility(View.VISIBLE);
+                    findViewById(R.id.dice2).setVisibility(View.VISIBLE);
+                    findViewById(R.id.dice3).setVisibility(View.VISIBLE);
                     break;
             }
             findViewById(R.id.diceMenu).setVisibility(View.GONE);
