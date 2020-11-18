@@ -1,7 +1,5 @@
 package com.example.myfirstapp.task4;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -12,11 +10,11 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.myfirstapp.R;
 
-import java.util.Dictionary;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
@@ -69,13 +67,10 @@ public class Dice extends AppCompatActivity implements SensorEventListener {
         Random randomGenerator = new Random();
         int randomNum = randomGenerator.nextInt(6)+1;
         mNumber.setForeground(getDrawable(dices.get(randomNum)));
-        //mNumber.setText(Integer.toString(randomNum));
         randomNum = randomGenerator.nextInt(6)+1;
         mNumber2.setForeground(getDrawable(dices.get(randomNum)));
-        //mNumber2.setText(Integer.toString(randomNum));
         randomNum = randomGenerator.nextInt(6)+1;
         mNumber3.setForeground(getDrawable(dices.get(randomNum)));
-        //mNumber3.setText(Integer.toString(randomNum));
     }
 
     @Override

@@ -2,23 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.myfirstapp">
 
-    <queries>
-        <intent>
-            <action android:name="android.intent.action.VIEW" />
-
-            <category android:name="android.intent.category.BROWSABLE" />
-
-            <data android:scheme="https" />
-        </intent>
-        <intent>
-            <action android:name="android.intent.action.DIAL" />
-        </intent>
-        <intent>
-            <action android:name="android.intent.action.VIEW" />
-
-            <data android:scheme="@string/map" />
-        </intent>
-    </queries>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -27,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".task4.Dice"></activity>
+        <activity android:name=".task5.MyYTPlayer" />
+        <activity android:name=".task4.Dice" />
         <activity android:name=".task3.DrawActivity" />
         <activity android:name=".task2.SecondActivity" />
         <activity android:name=".task2.MainActivity" />
@@ -46,5 +32,23 @@
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" />
     </application>
+
+    <!--    <queries>-->
+    <!--        <intent>-->
+    <!--            <action android:name="android.intent.action.VIEW" />-->
+
+    <!--            <category android:name="android.intent.category.BROWSABLE" />-->
+
+    <!--            <data android:scheme="https" />-->
+    <!--        </intent>-->
+    <!--        <intent>-->
+    <!--            <action android:name="android.intent.action.DIAL" />-->
+    <!--        </intent>-->
+    <!--        <intent>-->
+    <!--            <action android:name="android.intent.action.VIEW" />-->
+
+    <!--            <data android:scheme="@string/map" />-->
+    <!--        </intent>-->
+    <!--    </queries>-->
 
 </manifest>

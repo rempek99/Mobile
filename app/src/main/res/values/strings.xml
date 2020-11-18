@@ -40,11 +40,25 @@
     <string name="oneCube">One Cube</string>
     <string name="twoCubes">Two Cubes</string>
     <string name="threeCubes">Three Cubes</string>
+    <string name="play_video">Play Video</string>
+    <string name="pause">Pause</string>
+    <string name="stop">Stop</string>
+    <string name="video1">Video 1</string>
+    <string name="video2">Video 2</string>
+    <string name="video3">Video 3</string>
+    <string name="video4">Video 4 (Incorrect)</string>
+    <string name="running">Running</string>
+    <string name="paused">Paused</string>
+    <string name="stopped">Stopped</string>
+    <string name="ended">Ended</string>
+    <string name="video">Video</string>
+    <string name="loading">Loading</string>
 
     <string name="title_activity_task1">Task 1</string>
     <string name="title_activity_task2">Task 2</string>
     <string name="title_activity_task3">Task 3</string>
     <string name="title_activity_task4">Task 4</string>
+    <string name="title_activity_task5">Task 5</string>
     <string name="title_activity_start_activity">Start_Activity</string>
     <string name="title_activity_second_activity">Second Activity</string>
 </resources>

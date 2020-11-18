@@ -1,6 +1,8 @@
 package com.example.myfirstapp;
 
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,6 +19,7 @@ public class Start_Activity extends AppCompatActivity {
         setContentView(R.layout.start_activity);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
 
         Button btn_task1 = (Button) findViewById(R.id.btn_task1);
         btn_task1.setOnClickListener(new View.OnClickListener() {
@@ -50,5 +53,22 @@ public class Start_Activity extends AppCompatActivity {
                 startActivity(go_to_task4);
             }
         });
+        Button btn_task5 = (Button) findViewById(R.id.btn_task5);
+        btn_task5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent go_to_task5 = new Intent(getApplicationContext(), com.example.myfirstapp.task5.MyYTPlayer.class);
+                startActivity(go_to_task5);
+            }
+        });
+        if(isNetworkConnected())
+            System.out.println("INTERNET DZIALA!!!!!!");
+
+
+    }
+    private boolean isNetworkConnected() {
+        ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+
+        return cm.getActiveNetworkInfo() != null && cm.getActiveNetworkInfo().isConnected();
     }
 }
